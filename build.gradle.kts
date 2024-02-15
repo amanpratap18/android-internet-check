@@ -31,20 +31,20 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-//    afterEvaluate {
-//        publishing {
-//            publications {
-//                create<MavenPublication>("net") {
-//                    run {
-//                        groupId = "com.github.amanpratap18"
-//                        artifactId = "android-internet-check"
-//                        version = "0.1.0"
-//                    }
-//
-//                }
-//            }
-//        }
-//    }
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("net") {
+                    run {
+                        groupId = "com.github.amanpratap18"
+                        artifactId = "android-internet-check"
+                        version = "0.1.0"
+                    }
+
+                }
+            }
+        }
+    }
 }
 
 dependencies {
