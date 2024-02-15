@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -30,6 +31,20 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+//    afterEvaluate {
+//        publishing {
+//            publications {
+//                create<MavenPublication>("net") {
+//                    run {
+//                        groupId = "com.github.amanpratap18"
+//                        artifactId = "android-internet-check"
+//                        version = "0.1.0"
+//                    }
+//
+//                }
+//            }
+//        }
+//    }
 }
 
 dependencies {
@@ -43,3 +58,4 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 }
+
