@@ -25,26 +25,28 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    afterEvaluate {
-        publishing {
-            publications {
-                create<MavenPublication>("net") {
-                    run {
-                        groupId = "com.github.amanpratap18"
-                        artifactId = "android-internet-check"
-                        version = "0.1.0"
-                    }
-
-                }
-            }
-        }
-    }
+//    afterEvaluate {
+//        publishing {
+//            publications {
+//                bar(){
+//
+//                }
+//
+//                        groupId = "com.github.amanpratap18"
+//                        artifactId = "android-internet-check"
+//                        version = "0.1.0"
+//
+//
+//
+//            }
+//        }
+//    }
 }
 
 dependencies {
@@ -59,3 +61,14 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            register("mavenJava", MavenPublication::class){
+                groupId = "com.github.amanpratap18"
+                artifactId = "android-internet-check"
+                version = "0.1.0"
+            }
+        }
+    }
+}
